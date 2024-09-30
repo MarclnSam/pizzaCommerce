@@ -114,20 +114,273 @@ body{
     color:#a31e22;
 }
 
-/* 
-.mainSectionFirstPart{
-    width: 49%;
-    height: 100vh;
-}
-.mainSectionFirstPart{
 
+.productsContainer{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 6rem;
+    width: 90%;
+    overflow:hidden;
 }
-.mainSectionImage{
+.productElement{
+    display: flex;
+    flex-direction: row;
+    min-height: 10rem;
+    max-height: 20rem;
+    width: 47%;
+    margin-bottom: 6rem;
+}
+
+.productImage{
+    margin-right: 4rem;
+    height: 20rem;
+    width: 40%;
+    border: 8px solid #cc7d2b;
+    border-radius: 8px;
+    margin: 0rem 2rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.productImageZMglyZrodzony{
+    background-image: url(img/ZrodzonyZMgły.jfif);
+}
+
+.productImageOstatniImperator{
+    background-image: url(img/OstatniImperator.jfif);
+}
+.productImageAllomanta{
+    background-image: url(img/Alomanta.jfif);
+}
+.productImageMistrzMetali{
+    background-image: url(img/MistrzMetali.jfif);
+}
+.productImageStraznikKredikShaw{
+    background-image: url(img/StraznikZKredikShaw.jfif);
+}
+.productImageHemalurgicznyKolekcjoner{
+    background-image: url(img/HemulurgicznyKolekcjoner.jfif);
+}
+.productImageSkaaZwycięzca{
+    background-image: url(img/SkaaZwyciezca.jfif);
+}
+.productImageZwiadowcaMglisty{
+    background-image: url(img/ZwiadowcaMglisty.jfif);
+}
+/* .productImageMilkshake{
+    background-image: url(img/milkshake.jpeg);
+}
+.productImageCountryDelight{
+    background-image: url(img/countryDelight.jpg);
+} */
+.productImagePancakes:hover{
+    background-color: red;
+}
+.productDescription{
+    width: 60%;
+    
+}
+.productTitleandPrize{
+    margin:  0rem 0.4rem 0.4rem 0.4rem;
+    display: flex;
+    justify-content: space-between;
+}
+.productTitle{
+    color:#cc7d2b;
+    margin: 0rem 2rem 0rem 0rem;
+    letter-spacing: 0.4rem;
+}
+.productCompositionTitle{
+    color:#cc7d2b
+}
+.productPrize{
+    color: #cc7d2b;
+}
+hr {
+    border-top: 1px dotted #cc7d2b;
+  }
+.productDescriptionText{
+    color: #fff;
+    margin: 1.5rem 0.4rem 0.4rem 0.4rem;
+    font-size: 2.4rem;
+    letter-spacing: 0.1rem;
+   
+}
+.productDescription{
+    overflow:scroll;
+    
+}
+.productDescription::-webkit-scrollbar{
+    display: none;
+}
+.productImage:hover,.productImage:active{
+    
+    background-color: rgba(255, 0, 0, 0.5);
+    cursor: pointer;
+   
+}
+
+.oNasImage{
+    background-image: url(img/ONas.jpg);
+    width: 100%;
+    height: 80vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat:no-repeat;
+    opacity: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-weight: bolder;
+    color:#fff;
 }
-.mainSectionImage img{
-   
-    max-width: 50%; */
-    
+.firstPartTextContainer{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    background-color: rgba(255, 255, 255, 0.267); 
+    border-radius: 10px; 
+    padding: 20px;
+    backdrop-filter: blur(10px); 
+    color:#26282b;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+
+}
+.oNasTitle{
+    font-family:"Poppins", sans-serif;
+    font-size: 4rem;
+    position: relative;
+    right: 179px;
+}
+.oNasDesc{
+    font-size: 1.5rem;
+}
+.oNasImageFiller{
+    width: 49%;
+}
+
+.naszaMisjaFirstPart,.naszeJedzenieFirstPart,.naszPoczatkiFirstPart{
+    width: 70%;
+}
+.naszaMisjaSecondPart,.naszeJedzenieSecondPart,.naszPoczatkiSecondPart{
+    width: 29%;
+}
+.naszaMisjaContainer{
+    display: flex;
+}
+.naszPoczatkiContainer,.naszeJedzenieContainer,.naszaMisjaContainer{
+    display: flex;
+}
+.naszaMisjaSecondPart{
+    background-image: url(img/naszaMisja.jpg);
+    min-height: 60vh;
+    width:30%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.naszeJedzenieSecondPart{
+    background-image: url(img/NaszeJedzenie.jpg);
+    min-height: 60vh;
+    width:30%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.naszPoczatkiSecondPart{
+    background-image: url(img/NaszePoczatki.jpg);
+    min-height: 60vh;
+    width:30%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.naszaMisjaFirstPart,.naszeJedzenieFirstPart,.naszPoczatkiFirstPart{
+    background-color: #c7c6bd;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.naszaMisjaFirstPartParagraph,.naszeJedzenieFirstPartParagraph,.naszPoczatkiFirstPartParagraph{
+    width: 50%;
+    text-align: center;
+}
+.naszeJedzenieFirstPart{
+    background-color: #36393d;
+}
+.naszaMisjaFirstPart{
+    color:#a31e22;
+}
+.naszeJedzenieFirstPart{
+    color:#c7c6bd;
+}
+.naszPoczatkiFirstPart{
+    color:#36393d;
+}
+.naszaMisjaFirstPartHeader1,.naszeJedzenieFirstPartHeader1,.naszPoczatkiFirstPartHeader1{
+    font-size: 4rem;
+    margin: 1rem;
+}
+.naszaMisjaFirstPartHeader2,.naszeJedzenieFirstPartHeader2,.naszPoczatkiFirstPartHeader2{
+    font-size: 2rem;
+    margin: 0rem 1rem 1rem 0rem;
+}
+.naszaMisjaFirstPartParagraph,.naszPoczatkiFirstPartParagraph,.naszeJedzenieFirstPartParagraph{
+    line-height: 1.4rem;
+    letter-spacing: 0.15rem;
+}
+
+/* asd */
+.formHeader {
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+.formGroup {
+    margin-bottom: 1rem;
+}
+.formGroup label {
+    color: #fff;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+.formGroup input, .formGroup textarea, .formGroup select {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #36393d;
+    font-size: 1rem;
+}
+.formGroup input::placeholder, .formGroup textarea::placeholder {
+    color: #ccc;
+}
+.submitButton {
+    background-color: #a31e22;
+    color: #fff;
+    padding: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+.submitButton:hover {
+    background-color: #fff;
+    color: #a31e22;
+    font-weight: bold;
+}
+.mainTextHeader {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+

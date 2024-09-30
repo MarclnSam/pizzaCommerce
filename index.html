@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luthadel Pizza</title>
-    <script src="script.jss" defer></script>
+    <script src="script.js" defer></script>
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
@@ -29,6 +29,96 @@
             <img src="img/pizzaSlice1.webp" alt="Slice of Pizza" class="mainImage">;
         </div>
     </main>
+    <section id="menuSection" class="menuSection">
+
+        <div class="productsContainer" id="productsContainer">
+        </div>
+    
+    </section>
+    
+    <section id="aboutUsSection" class="aboutUsSection">
+        <div class="oNasFirstPart">
+            <div class="oNasImage" id="oNasImage">
+                <div class="firstPartTextContainer">
+                    <h2 class="oNasTitle">O nas</h2>
+                    <p class="oNasDesc">To historie z naszej podróży – a to dopiero początek.</p>
+                </div>
+                <div class="oNasImageFiller">
+                    
+                </div>
+                
+            </div>
+        </div>
+        <div class="naszaMisjaContainer">
+            <div class="naszaMisjaFirstPart">
+                <h2 class="naszaMisjaFirstPartHeader1">Nasza Misja</h2>
+                <h4 class="naszaMisjaFirstPartHeader2">Dlaczego to robimy</h4>
+                <p class="naszaMisjaFirstPartParagraph">Naszą misją jest przywracanie radości mieszkańcom Luthadelu, którzy codziennie zmagają się z brutalnością świata. Pragniemy stworzyć miejsce, w którym każda osoba, bez względu na pochodzenie, poczuje się jak Zrodzony z Mgły. Dążymy do budowania wspólnoty, w której opowieści dzielone przy stole przypominają te, które przekazywane były przez pokolenia.</p>
+            </div>
+            <div class="naszaMisjaSecondPart"></div>
+        </div>
+        
+        <div class="naszeJedzenieContainer">
+            <div class="naszeJedzenieSecondPart"></div>
+            <div class="naszeJedzenieFirstPart">
+                <h2 class="naszeJedzenieFirstPartHeader1">Nasze Jedzenie</h2>
+                <h4 class="naszeJedzenieFirstPartHeader2">Jak to robimy</h4>
+                <p class="naszeJedzenieFirstPartParagraph">Nasze menu to kulinarna mapa Luthadelu, wypełniona potrawami inspirowanymi różnorodnością regionów imperium. Każda pizza to odkrywanie nowych elementów Allomancji – od klasycznych, jak „Czarna Mgiełka”, po nowoczesne interpretacje, jak „Złoty Eliksir”. Używamy lokalnych składników, by każda pizza była miksturą smaków, które łączą tradycję z nowoczesnością. Każdy kęs to podróż do świata, gdzie jedzenie łączy pokolenia.</p>
+            </div>
+           
+        </div>
+        
+        <div class="naszPoczatkiContainer">
+            <div class="naszPoczatkiFirstPart">
+                <h2 class="naszPoczatkiFirstPartHeader1">Nasze początki</h2>
+                <h4 class="naszPoczatkiFirstPartHeader2">Jak zaczynaliśmy</h4>
+                <p class="naszPoczatkiFirstPartParagraph">W sercu Luthadelu, w cieniu wież Kredik Shaw, powstała nasza pizzeria, zainspirowana zarówno smakiem, jak i magią Allomancji. Nasza historia zaczęła się w mrocznych uliczkach miasta, a teraz rozkwita w kolorach i aromatach na talerzach. Każda pizza, która opuszcza naszą kuchnię, jest jak eliksir Allomanty – pełna tajemnic, gotowa dostarczyć niezapomnianych doznań.</p>
+            </div>
+            <div class="naszPoczatkiSecondPart"></div>
+        </div>
+    </section>
+    <div class="mainSectionContainer">
+        <div class="mainTextSection">
+            <h1 class="mainTextHeader">Jeśli Chcesz Pracować</h1>
+    
+            <p class="mainTextParagraph">
+                W mrocznych zakamarkach Luthadelu, gdzie ambicja spotyka się z pasją, poszukujemy nowych członków do naszej ekipy. Jeśli pragniesz stać się częścią tej niezwykłej podróży i wspólnie z nami tworzyć smaki, które ożywiają dusze, wypełnij formularz po prawej stronie. Twoja odwaga i determinacja mogą stać się kluczem do nowej, ekscytującej roli w naszym zespole. Razem możemy stawić czoła wyzwaniom i budować wspólnotę, w której każdy kęs pizzy opowiada historię. Nie czekaj – przekształć swoje marzenia w rzeczywistość i dołącz do nas!
+            </p>
+        </div>
+        <div class="mainImageSection">
+            <form class="contact-form" enctype="multipart/form-data">
+                <h2 class="formHeader">Formularz kontaktowy</h2>
+                <div class="formGroup">
+                    <label for="name">Imię i nazwisko:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="formGroup">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="formGroup">
+                    <label for="position">Wybierz stanowisko:</label>
+                    <select id="position" name="position" required>
+                        <option value="" disabled selected>-- Wybierz --</option>
+                        <option value="Kucharz">Kucharz</option>
+                        <option value="Kelner">Kelner</option>
+                        <option value="Pomoc kuchenna">Pomoc kuchenna</option>
+                        <option value="Manager restauracji">Manager restauracji</option>
+                        <option value="Dostawca">Dostawca</option>
+                    </select>
+                </div>
+                <div class="formGroup">
+                    <label for="attachment">Załącz CV:</label>
+                    <input type="file" id="attachment" name="attachment" accept=".pdf,.doc,.docx" required>
+                </div>
+                <div class="formGroup">
+                    <label for="message">Wiadomość:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="submitButton">Wyślij</button>
+            </form>
+        </div>
+    </div>
     
 </body>
 </html>
