@@ -383,4 +383,82 @@ hr {
     font-size: 3rem;
     margin-bottom: 1rem;
 }
+.listOfIconsElement{
+    width: 100px;
+    height: 100px;
+}
+.filterIconsContainer{
+    display: flex;
+    justify-content: center;
+   
+}
+.listOfIconsContainer{
+    display: flex;
+    list-style: none;
+   
+}
+.listOfIconsElement{
+    margin: 4rem;
+    cursor: pointer;
 
+}  
+.listOfIconsElement svg path {
+    transition: fill 0.3s ease; 
+}
+  
+.listOfIconsElement:hover svg path, .listOfIconsElement:active svg path {
+    fill: #cc7d2b;
+    
+}
+.pizzaOrderSection{
+    display: flex;
+}
+.leftSideOfOrderSection{
+    width: 50%;
+    background-color: #c7c6bd;
+    color:#36393d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+.orderTitle{
+   margin-top: 2rem;
+   font-size: 4rem;
+}
+.orderDescription{
+    font-size: 1.3rem;
+}
+.cartTitle{
+    font-size: 3rem;
+  
+}
+.cartSection{
+    margin:4rem;
+    color:#a31e22
+}
+.shopListElement{
+    display: flex;
+    align-items: center;
+    background-color: #a31e22;
+    border-radius:16px;
+    width:600px;
+    color:#c7c6bd;
+    margin: 1rem;
+    border: 5px solid #36393d;
+}
+.productImage2{
+    height: 11rem;
+    width: 30%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.productName{
+    margin: 1rem;
+    font-size: 3rem;
+}
+.productPrice{
+    font-size: 3rem;
+    margin: 1rem;
+}
