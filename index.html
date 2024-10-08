@@ -129,55 +129,222 @@
             </div>
         </div>
     </section>
+   
     <section class="orderSection">
-        
-    
-        <section class="pizzaOrderSection">
-            <div class="leftSideOfOrderSection">
-                    <h2 class="orderTitle">Zamów pizzę!</h2>
-                    <h5 class="orderDescription">Czy chciałbyś zamówić pyszną pizzę z naszej oferty? Wybierz jedną z opcji obok:</h4>
-                    <div class="cartSection">
-                        <h2 class="cartTitle">Twój koszyk <span id="totalPrice">0.00</span></h2>
-                        <div class="shopListContainer">
-                            <div class="shopListElement">
-                                <div class=" productImage2 productImageZMglyZrodzony">
-
-                                </div>
-                                <h3 class="productName">Product name</h3>
-                                <h3 class="productPrice">3.99</h3>
+     
+        <section class="completingOrderSection">
+            <div class="completingOrderSectionContainer">
+                <div class="leftSideOfCompletingOrderContainer">
+                    <h3 class="filterHeader">Filtry</h3>
+                    <div class="categorySelection">
+                        <h4 class="categoryLabel">Wybierz kategorię:</h4>
+                        <form class="categorySelectionForm">
+                            <div class="categoryOption">
+                                <input type="checkbox" id="pizzaCategory" name="category" value="Pizza">
+                                <label for="pizzaCategory">Pizza</label>
                             </div>
-
-                            <div class="shopListElement">
-                                <div class=" productImage2 productImageZMglyZrodzony">
-
-                                </div>
-                                <h3 class="productName">Product name</h3>
-                                <h3 class="productPrice">3.99</h3>
+                            <div class="categoryOption">
+                                <input type="checkbox" id="starterCategory" name="category" value="Przystawka">
+                                <label for="starterCategory">Przystawka</label>
                             </div>
-                            <div class="shopListElement">
-                                <div class=" productImage2 productImageZMglyZrodzony">
-
-                                </div>
-                                <h3 class="productName">Product name</h3>
-                                <h3 class="productPrice">3.99</h3>
+                            <div class="categoryOption">
+                                <input type="checkbox" id="drinksCategory" name="category" value="Napoje">
+                                <label for="drinksCategory">Napoje</label>
                             </div>
-                            <div class="shopListElement">
-                                <div class=" productImage2 productImageZMglyZrodzony">
-
-                                </div>
-                                <h3 class="productName">Product name</h3>
-                                <h3 class="productPrice">3.99</h3>
+                        </form>
+                        
+                    </div>
+                    <div class="priceCrderContainer">
+                        <h4 class="priceLabel">Cena</h4>
+                        <div class="priceFilters">
+                            <div class="priceInputContainer">
+                                <p class="priceFromLabel">Cena od</p>
+                                <input type="number" class="priceFromInput" placeholder="Wprowadź kwotę">
                             </div>
-                            
-                           
+                            <div class="priceInputContainer">
+                                <p class="priceToLabel">Cena do</p>
+                                <input type="number" class="priceToInput" placeholder="Wprowadź kwotę">
+                            </div>
                         </div>
                     </div>
-           
+                   
+                    <div class="proceedToCartButton">Przejdź Do Koszyka</div>
+                </div>
+                <div class="rightSideOfCompletingOrderContainer">
+                    <h2 class="selectedCategoryName">Nazwa kategorii</h2>
+                    <h4 class="sortingLabel">Sortowanie</h4>
+                    <div class="sortingDropdown">
+                        <select id="sortingOptions" class="sortingOptions" name="sortingOptions">
+                            <option value="" selected>Domyślnie</option>
+                            <option value="Malejąco">Malejąco</option>
+                            <option value="Rosnąco">Rosnąco</option>
+                        </select>
+                    </div>
+                    <div class="completingProductContainer">
+                        <div class="completingProductElementContainer">
+                            <div class="productImageContainer">
+                                <p class="productImagePlaceholder"></p>
+                            </div>
+                            <p class="productNameOrder">Zrodzony z Mgły</p>
+                            <div class="productPricingContainer">
+                                <p class="productPriceOrder">69.99$</p>
+                                <div class="addToCartButton">Dodaj do Koszyka</div>
+                            </div>
+                        </div>
+                        <div class="completingProductElementContainer">
+                            <div class="productImageContainer">
+                                <p class="productImagePlaceholder"></p>
+                            </div>
+                            <p class="productNameOrder">Zrodzony z Mgły</p>
+                            <div class="productPricingContainer">
+                                <p class="productPriceOrder">69.99$</p>
+                                <div class="addToCartButton">Dodaj do Koszyka</div>
+                            </div>
+                        </div>
+                        <div class="completingProductElementContainer">
+                            <div class="productImageContainer">
+                                <p class="productImagePlaceholder"></p>
+                            </div>
+                            <p class="productNameOrder">Zrodzony z Mgły</p>
+                            <div class="productPricingContainer">
+                                <p class="productPriceOrder">69.99$</p>
+                                <div class="addToCartButton">Dodaj do Koszyka</div>
+                            </div>
+                        </div>
+                        <div class="completingProductElementContainer">
+                            <div class="productImageContainer">
+                                <p class="productImagePlaceholder"></p>
+                            </div>
+                            <p class="productNameOrder">Zrodzony z Mgły</p>
+                            <div class="productPricingContainer">
+                                <p class="productPriceOrder">69.99$</p>
+                                <div class="addToCartButton">Dodaj do Koszyka</div>
+                            </div>
+                        </div>
+                        <div class="completingProductElementContainer">
+                            <div class="productImageContainer">
+                                <p class="productImagePlaceholder"></p>
+                            </div>
+                            <p class="productNameOrder">Zrodzony z Mgły</p>
+                            <div class="productPricingContainer">
+                                <p class="productPriceOrder">69.99$</p>
+                                <div class="addToCartButton">Dodaj do Koszyka</div>
+                            </div>
+                        </div>
+                        <div class="completingProductElementContainer">
+                            <div class="productImageContainer">
+                                <p class="productImagePlaceholder"></p>
+                            </div>
+                            <p class="productNameOrder">Zrodzony z Mgły</p>
+                            <div class="productPricingContainer">
+                                <p class="productPriceOrder">69.99$</p>
+                                <div class="addToCartButton">Dodaj do Koszyka</div>
+                            </div>
+                        </div>
+                        <div class="completingProductElementContainer">
+                            <div class="productImageContainer">
+                                <p class="productImagePlaceholder"></p>
+                            </div>
+                            <p class="productNameOrder">Zrodzony z Mgły</p>
+                            <div class="productPricingContainer">
+                                <p class="productPriceOrder">69.99$</p>
+                                <div class="addToCartButton">Dodaj do Koszyka</div>
+                            </div>
+                        </div>
+                        <div class="completingProductElementContainer">
+                            <div class="productImageContainer">
+                                <p class="productImagePlaceholder"></p>
+                            </div>
+                            <p class="productNameOrder">Zrodzony z Mgły</p>
+                            <div class="productPricingContainer">
+                                <p class="productPriceOrder">69.99$</p>
+                                <div class="addToCartButton">Dodaj do Koszyka</div>
+                            </div>
+                        </div>
+                        <div class="completingProductElementContainer">
+                            <div class="productImageContainer">
+                                <p class="productImagePlaceholder"></p>
+                            </div>
+                            <p class="productNameOrder">Zrodzony z Mgły</p>
+                            <div class="productPricingContainer">
+                                <p class="productPriceOrder">69.99$</p>
+                                <div class="addToCartButton">Dodaj do Koszyka</div>
+                            </div>
+                        </div>
+                        <div class="completingProductElementContainer">
+                            <div class="productImageContainer">
+                                <p class="productImagePlaceholder"></p>
+                            </div>
+                            <p class="productNameOrder">Zrodzony z Mgły</p>
+                            <div class="productPricingContainer">
+                                <p class="productPriceOrder">69.99$</p>
+                                <div class="addToCartButton">Dodaj do Koszyka</div>
+                            </div>
+                        </div>
+                        <div class="completingProductElementContainer">
+                            <div class="productImageContainer">
+                                <p class="productImagePlaceholder"></p>
+                            </div>
+                            <p class="productNameOrder">Zrodzony z Mgły</p>
+                            <div class="productPricingContainer">
+                                <p class="productPriceOrder">69.99$</p>
+                                <div class="addToCartButton">Dodaj do Koszyka</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="pizzaOrderSection">
+            <div class="leftSideOfOrderSectionContainer">
+                <div class="leftSideOfOrderSection">
+                    <div class="leftContainer">
+                        <div class="cartHeaderContainer">
+                            <h2 class="leftSideOfOrderSectionHeader">Produkty w Koszyku</h2>
+                            <p class="leftSideOfOrderSectionParagraph">Wszystkie ceny podane z VAT</p>
+                        </div>
+                        <div class="cartActionsContainer">
+                            <div class="clearCartButton">
+                                usuń wszystkie produkty
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="pizzaOrderSectionHorizontalLine">
+                    <div class="cartItem">
+                        <div class="cartItemImage"></div> 
+                        <div class="cartItemDetails"> 
+                            <h3 class="cartItemProductName">Zrodzony z Mgły</h3>
+                            <div class="containercsa">
+                                <div class="cartItemQuantityControls">
+                                    <div class="cartItemDecreaseQuantity">-</div> 
+                                    <div class="cartItemQuantity"><span>1</span> szt.</div> 
+                                    <div class="cartItemIncreaseQuantity">+</div> 
+                                </div>
+                                <div class="cartItemRemove">usuń</div> 
+
+                            </div>        
+                        </div>
+                        <div class="cartItemPrice">69.99$</div> 
+                    </div>
+                </div>
             </div>
             <div class="rightSideOfOrderSection">
-                xdsda
+                <div class="orderDetails">
+                    <h2 class="summaryTitle">Podsumowanie</h2>
+                    <hr>
+                    <div class="orderSummaryContainer">
+                        <p class="productSumLabel">Suma produktów</p>
+                        <p class="productSumAmount"><b><span>$69.99</span></b></p>
+                    </div>
+                    <div class="deliveryPaymentLabel">Dostawa i płatność</div>
+                </div>
+               
             </div>
-           
+            
+         
            
            <!--  <div class="orderHeader">
                 <h2 class="orderTitle">Zamów pizzę!</h2>
@@ -198,6 +365,48 @@
             </div>
             <button class="navigationOrderButton" onclick="orderPizza()">Anuluj</button>
             <button class="navigationOrderButton" onclick="orderPizza()">Dalej</button> -->
+
+            <!-- <div class="leftSideOfOrderSection">
+                <h2 class="orderTitle">Zamów pizzę!</h2>
+                <h5 class="orderDescription">Czy chciałbyś zamówić pyszną pizzę z naszej oferty? Wybierz jedną z opcji obok:</h4>
+                <div class="cartSection">
+                    <h2 class="cartTitle">Twój koszyk <span id="totalPrice">0.00</span></h2>
+                    <div class="shopListContainer">
+                        <div class="shopListElement">
+                            <div class=" productImage2 productImageZMglyZrodzony">
+
+                            </div>
+                            <h3 class="productName">Product name</h3>
+                            <h3 class="productPrice">3.99</h3>
+                        </div>
+
+                        <div class="shopListElement">
+                            <div class=" productImage2 productImageZMglyZrodzony">
+
+                            </div>
+                            <h3 class="productName">Product name</h3>
+                            <h3 class="productPrice">3.99</h3>
+                        </div>
+                        <div class="shopListElement">
+                            <div class=" productImage2 productImageZMglyZrodzony">
+
+                            </div>
+                            <h3 class="productName">Product name</h3>
+                            <h3 class="productPrice">3.99</h3>
+                        </div>
+                        <div class="shopListElement">
+                            <div class=" productImage2 productImageZMglyZrodzony">
+
+                            </div>
+                            <h3 class="productName">Product name</h3>
+                            <h3 class="productPrice">3.99</h3>
+                        </div>
+                        
+                       
+                    </div>
+                </div>
+       
+        </div> -->
         </section>
     </section>
     
