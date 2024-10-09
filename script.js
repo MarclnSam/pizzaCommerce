@@ -60,7 +60,7 @@ class Product{
         `
         newDivElement.querySelector('.productImagePlaceholder').style.backgroundImage = `url(${this.imageUrl})`;
         const addToCartButton = newDivElement.querySelector('.addToCartButton');
-        addToCartButton.addEventListener('click', )
+        addToCartButton.addEventListener('click',()=>{});
         if (this.category === 'pizza'){
             newDivElement.classList.add('categoryPizza');
         }else if (this.category === 'drink'){
