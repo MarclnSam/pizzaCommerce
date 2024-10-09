@@ -410,6 +410,7 @@ hr {
     fill: #cc7d2b;
     
 }
+
 /* TU ZNACZNIK  */
 .completingOrderSection{
     display: flex;
@@ -466,6 +467,7 @@ hr {
     margin: 1rem 0rem 0.3rem 0rem;
 }
 .sortingOptions{
+    cursor: pointer;
     border: 1px solid #36393d;
     padding: 0.4rem 1rem;
     margin: 0rem 0rem 3rem 0rem;
@@ -477,6 +479,8 @@ hr {
 }
 .completingProductElementContainer{
     width: 150px;
+    display: flex;
+    flex-direction: column;
 }
 
 .productImageContainer{
@@ -689,4 +693,9 @@ hr {
     cursor: pointer;
     color: #f1e9d9;
     transition: background-color 0.5s ease, color 1.6s ease;
+}
+.productNameOrder{
+    text-align: center;
+    min-height: 2.5rem;
+    overflow: hidden;
 }

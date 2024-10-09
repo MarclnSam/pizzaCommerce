@@ -44,7 +44,36 @@ class Product{
         return menuElement;
 
     }
+    createProductOrderingElement(){
+        const newDivElement = document.createElement('div');
+        newDivElement.classList.add('completingProductElementContainer');
+       
+        newDivElement.innerHTML = `
+        <div class="productImageContainer">
+            <p class="productImagePlaceholder"></p>
+        </div>
+        <p class="productNameOrder">${this.name}</p>
+        <div class="productPricingContainer">
+            <p class="productPriceOrder">${this.price}</p>
+            <div class="addToCartButton">Dodaj do Koszyka</div>
+        </div>
+        `
+        newDivElement.querySelector('.productImagePlaceholder').style.backgroundImage = `url(${this.imageUrl})`;
+        const addToCartButton = newDivElement.querySelector('.addToCartButton');
+        addToCartButton.addEventListener('click', )
+        if (this.category === 'pizza'){
+            newDivElement.classList.add('categoryPizza');
+        }else if (this.category === 'drink'){
+            newDivElement.classList.add('categoryDrink');
+        }else if(this.category === 'appetizer'){
+            newDivElement.classList.add('categoryAppetizer');
+        }
+        return newDivElement;
+    }
+   
 }
+
+
 
 zrodzonyZMgły = new Product('Zrodzony z Mgły',15.99,'img/ZrodzonyZMgły.jfif','Pizza pełna mocy, jak Zrodzony z Mgły przemierzający nocne ulice Luthadelu. Ostra, wyrazista, z dodatkiem papryczek jalapeño, które wyzwalają prawdziwą siłę każdego kęsa',' Sos pomidorowy, ser mozzarella, pepperoni, papryczki jalapeño, oliwki, świeża bazylia.', 'pizza');
 
@@ -94,46 +123,39 @@ hemalurgiczneSzpikulce = new Product(
     'Kurczak, papryka, cebula, cukinia, sos miodowo-musztardowy, grill.',
     'appetizer'
 );
-
-zrodzonyZMgłyElement = zrodzonyZMgły.createProduct();
-ostatniImperatorElement = ostatniImperator.createProduct();
-allomantaElement = allomanta.createProduct();
-mistrzMetaliElement = mistrzMetali.createProduct();
-straznikKredikShawElement = straznikKredikShaw.createProduct();
-hemalurgicznyKolekcjonerElement = hemalurgicznyKolekcjoner.createProduct();
-skaaZwycięzcaElement = skaaZwycięzca.createProduct();
-zwiadowcaMglistyElement = zwiadowcaMglisty.createProduct();
-eliksirAllomantycznyElement = eliksirAllomantyczny.createProduct();
-krwawaMglaElementElement = krwawaMgla.createProduct();
-zlotyPierscienElement = zlotyPierscien.createProduct();
-mgielnyTonikElement = mgielnyTonik.createProduct();
-ognisteKulkiZKredikShawElement = ognisteKulkiZKredikShaw.createProduct();
-skaanskieChlebkiElement = skaanskieChlebki.createProduct();
-hemalurgiczneSzpikulceElement = hemalurgiczneSzpikulce.createProduct();
-
+const listOfProductOrderingElement = document.getElementById('completingProductContainer');
 const productsContainer = document.getElementById('productsContainer');
-productsContainer.appendChild(zrodzonyZMgłyElement);
-productsContainer.appendChild(ostatniImperatorElement);
-productsContainer.appendChild(allomantaElement);
-productsContainer.appendChild(mistrzMetaliElement);
-productsContainer.appendChild(straznikKredikShawElement);
-productsContainer.appendChild(hemalurgicznyKolekcjonerElement);
-productsContainer.appendChild(skaaZwycięzcaElement);
-productsContainer.appendChild(zwiadowcaMglistyElement);
-productsContainer.appendChild(eliksirAllomantycznyElement);
-productsContainer.appendChild(krwawaMglaElementElement);
-productsContainer.appendChild(zlotyPierscienElement);
-productsContainer.appendChild(mgielnyTonikElement);
-productsContainer.appendChild(ognisteKulkiZKredikShawElement);
-productsContainer.appendChild(skaanskieChlebkiElement);
-productsContainer.appendChild(hemalurgiczneSzpikulceElement);
+const products = [
+    ostatniImperator,
+    zrodzonyZMgły,
+    allomanta,
+    mistrzMetali,
+    straznikKredikShaw,
+    hemalurgicznyKolekcjoner,
+    skaaZwycięzca,
+    zwiadowcaMglisty,
+    eliksirAllomantyczny,
+    krwawaMgla,
+    zlotyPierscien,
+    mgielnyTonik,
+    ognisteKulkiZKredikShaw,
+    skaanskieChlebki,
+    hemalurgiczneSzpikulce
+];
+products.forEach(product => {
+    const productMenuElement = product.createProduct();
+    productsContainer.appendChild(productMenuElement); /* Tworzymy Elementy w menu */
+    const productOrderingElement = product.createProductOrderingElement();
+    listOfProductOrderingElement.appendChild(productOrderingElement); /* Tworzymy Elementy w zamawianiu */
+});
 
 const pizzaButton = document.getElementById('pizzaButton');
 const drinkButton = document.getElementById('drinkButton');
 const appetizerButton = document.getElementById('appetizerButton');
 const everythinkButton = document.getElementById('everythinkButton');
-productList = document.querySelectorAll('.productElement');
-const sort = function(sortedAtribut){
+productListMenu= document.querySelectorAll('.productElement');
+
+const sort = function(sortedAtribut,productList){
     if(sortedAtribut === 'pizza'){
         for(let i=0;i<productList.length;i++){
             if(productList[i].classList.contains('categoryAppetizer')){
@@ -187,10 +209,23 @@ const sort = function(sortedAtribut){
         }
     }
 }
-pizzaButton.addEventListener('click',()=>sort('pizza'));
-drinkButton.addEventListener('click',()=>sort('drink'));
-appetizerButton.addEventListener('click',()=>sort('appetizer'));
-everythinkButton.addEventListener('click',()=>sort('everythink'));
+
+
+pizzaButton.addEventListener('click',()=>sort('pizza',productListMenu));
+drinkButton.addEventListener('click',()=>sort('drink',productListMenu));
+appetizerButton.addEventListener('click',()=>sort('appetizer',productListMenu));
+everythinkButton.addEventListener('click',()=>sort('everythink',productListMenu));
+
+const pizzaCatgoryClicker = document.getElementById('pizzaCategory');
+const appetizerCatgoryClicker = document.getElementById('starterCategory');
+const drinksCatgoryClicker = document.getElementById('drinksCategory');
+
+pizzaCatgoryClicker.addEventListener('click',()=>sort('pizza',listOfProductOrderingElement.children));
+appetizerCatgoryClicker.addEventListener('click',()=>sort('appetizer',listOfProductOrderingElement.children));
+drinksCatgoryClicker.addEventListener('click',()=>sort('drink',listOfProductOrderingElement.children));
+
+
+
 /* console.log(productList);
 function czyPizza(){
     for(let i=0;i<productList.length;i++){
@@ -199,8 +234,10 @@ function czyPizza(){
         }
     }
 } */
-czyPizza();
+/* czyPizza(); */
 /* console.log(productList[0].style.display = 'none'); */
 /* pizzaButton.addEventListener('click',()=>{
     alert('jd');
 }) */
+
+    
