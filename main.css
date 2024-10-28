@@ -424,7 +424,7 @@ hr {
     min-height: 90vh;
     width: 90%;
     display: flex;
-    justify-content: space-between;
+    margin: 0 auto;
     background-color: #f1e9d9;
     border-radius: 8px;
     margin: 4rem;
