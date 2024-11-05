@@ -61,11 +61,14 @@ class Product {
             '.productImagePlaceholder'
         ).style.backgroundImage = `url(${this.imageUrl})`;
         const addToCartButton = newDivElement.querySelector('.addToCartButton');
+        let cartItemContainer = document.getElementById('cartItemContainer');
         addToCartButton.addEventListener('click', () => {
-          alert('js');
-          let i = this.createCartProduct();
-          cartItemContainer.appendChild(i);
-
+            let i = this.createCartProduct();
+            console.log(i);
+            cartItemContainer.appendChild(i);
+            sumOfAllProducts += this.price;
+            updateProductSum();
+            console.log(cartItemContainer);
         });
         if (this.category === 'pizza') {
             newDivElement.classList.add('categoryPizza');
@@ -82,21 +85,62 @@ class Product {
         newCartItem.innerHTML = `
             <div class="cartItemImage"></div>
             <div class="cartItemDetails">
-                <h3 class="cartItemProductName">Zrodzony z Mgły</h3>
+                <h3 class="cartItemProductName">${this.name}</h3>
                 <div class="containercsa">
                     <div class="cartItemQuantityControls">
                         <div class="cartItemDecreaseQuantity">-</div>
                         <div class="cartItemQuantity">
-                            <span>1</span> szt.
+                            <span class="numberOfItems">1</span> szt.
                         </div>
                         <div class="cartItemIncreaseQuantity">+</div>
                     </div>
                     <div class="cartItemRemove">usuń</div>
                 </div>
             </div>
-            <div class="cartItemPrice">69.99$</div>
+            <div class="cartItemPrice">${this.price}</div>
       `;
-      return newCartItem;
+        let cartItemImage = newCartItem.querySelector('.cartItemImage');
+        cartItemImage.style.backgroundImage = `url("${this.imageUrl}")`;
+        let cartItemPrice = newCartItem.querySelector('.cartItemPrice');
+
+        const deleteButton = newCartItem.querySelector('.cartItemRemove');
+        deleteButton.addEventListener('click', () => {
+            console.log(Number(newCartItem.querySelector('.cartItemPrice').textContent));
+            sumOfAllProducts -= Number(newCartItem.querySelector('.cartItemPrice').textContent);
+            updateProductSum();
+            newCartItem.remove();
+        });
+        const cartItemDecreaseQuantity = newCartItem.querySelector('.cartItemDecreaseQuantity');
+        const cartItemIncreaseQuantity = newCartItem.querySelector('.cartItemIncreaseQuantity');
+        const numberOfItems = newCartItem.querySelector('.numberOfItems');
+
+        cartItemDecreaseQuantity.addEventListener('click', () => {
+            sumOfAllProducts -= this.price;
+            updateProductSum();
+            const num = Number(numberOfItems.textContent) - 1;
+            const priceOfProducts = (this.price * num).toFixed(2);
+            numberOfItems.innerHTML = num;
+            if (numberOfItems.textContent < 1) {
+                newCartItem.remove();
+            } else {
+                console.log(priceOfProducts);
+                cartItemPrice.innerHTML = priceOfProducts;
+                num;
+            }
+        });
+
+        cartItemIncreaseQuantity.addEventListener('click', () => {
+            sumOfAllProducts += this.price;
+            updateProductSum();
+            const num = Number(numberOfItems.textContent) + 1;
+            numberOfItems.innerHTML = num;
+            const priceOfProducts = (this.price * num).toFixed(2);
+            console.log(priceOfProducts);
+
+            cartItemPrice.innerHTML = priceOfProducts;
+        });
+        const productSumAmountItem = document.querySelector('.productSumAmountItem');
+        return newCartItem;
     }
 }
 
@@ -474,10 +518,16 @@ pizzaCatgoryCheckbox.addEventListener('click', filterByCheckBox);
 appetizerCatgoryCheckbox.addEventListener('click', filterByCheckBox);
 drinksCatgoryCheckbox.addEventListener('click', filterByCheckBox);
 
-const zdj = document.querySelector('.productElement').lastElementChild;
-console.log(zdj);
-console.log(zdj.getBoundingClientRect());
-console.log(zdj.scrollHeight);
-console.log(zdj.clientHeight);
+const clearCartButton = document.querySelector('.clearCartButton');
+clearCartButton.addEventListener('click', () => {
+    cartItemContainer.innerHTML = '';
+    sumOfAllProducts = 0;
+    updateProductSum();
+});
+let productSumAmountItem = document.querySelector('.productSumAmountItem');
+let sumOfAllProducts = 0;
+const updateProductSum = ()=>{
+   
+    productSumAmountItem.innerHTML = sumOfAllProducts.toFixed(2);
+}
 
-const cartItemContainer = document.getElementById('cartItemContainer');
