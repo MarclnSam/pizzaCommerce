@@ -1,12 +1,15 @@
-import { Product } from './Modules/product.js';
+/* import { Product } from './Modules/product.js'; */
 import { products } from './Modules/listOfProducts.js';
 import { clearCart } from './Modules/clearCart.js';
-import { updateProductSum } from './Modules/updateProductSum.js';
+/* import { updateProductSum } from './Modules/updateProductSum.js'; */
 import { renderProducts } from './Modules/menuProductRender.js';
 import { initFilterEventListeners } from './Modules/initSortEventListeners.js';
 import { initFilterByCheckbox } from './Modules/initFilterByCheckbox.js';
 import { initFilterByPrice } from './Modules/initFilterByPrice.js';
 import { initSorting } from './Modules/initSorting.js';
+import { pageRouting } from './Modules/pageRouter.js';
+import { popupFunctions } from './Modules/popup.js';
+
 
 // inicializacja zmiennej globalnej sumy produków
 globalThis.sumOfAllProducts = 0;
@@ -26,7 +29,12 @@ initFilterByPrice();
 
 // Sortowanie
 initSorting();
+//Nawigacja
+pageRouting();
 const clearCartButton = document.querySelector('.clearCartButton');
 clearCartButton.addEventListener('click', clearCart);
+//popup
+popupFunctions();
 
 
+localStorage.setItem('cart', JSON.stringify([])); // Utworzenie pustego koszyka

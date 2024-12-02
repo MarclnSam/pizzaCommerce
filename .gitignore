@@ -1,0 +1,12 @@
+# Ignorowanie katalogów build i zależności
+node_modules/
+dist/
+
+# Pliki systemowe
+.DS_Store
+Thumbs.db
+
+# Logi i cache
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

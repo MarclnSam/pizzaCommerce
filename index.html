@@ -4,8 +4,8 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Luthadel Pizza</title>
-        <script type="module" src="script.js" defer></script>
-        <link rel="stylesheet" href="main.css" />
+        <script type="module" src="src/script.js" defer></script>
+        <link rel="stylesheet" href="src/main.css" />
     </head>
     <body>
         <nav class="navigationContainer" id="navigationContainer">
@@ -15,28 +15,35 @@
                 </li>
                 <li
                     id="navigationListElement"
-                    class="navigationListElement navigationItem navigationFirstElement"
+                    class="navigationListElement navigationItem navigationFirstElement navigationHome"
+                ></li>
+                <li
+                    id="navigationListElement"
+                    class="navigationListElement navigationItem navigationMenu"
                 >
-                    Home
+                    Start
                 </li>
-                <li id="navigationListElement" class="navigationListElement navigationItem">
-                    Menu
+                <li
+                    id="navigationListElement"
+                    class="navigationListElement navigationItem navigationAbout"
+                >
+                    O nas
                 </li>
-                <li id="navigationListElement" class="navigationListElement navigationItem">
-                    About us
-                </li>
-                <li id="navigationListElement" class="navigationListElement navigationItem">
-                    Contact
+                <li
+                    id="navigationListElement"
+                    class="navigationListElement navigationItem navigationContact"
+                >
+                    Kontakt
                 </li>
                 <li
                     id="navigationListElement"
                     class="navigationListElement navigationItem navigationOrderButton"
                 >
-                    Order
+                    Zamów
                 </li>
             </ul>
         </nav>
-        <main class="mainSectionContainer">
+        <main class="mainSectionContainer" id="mainSectionContainer">
             <div class="mainTextSection">
                 <h1 class="mainTextHeader">
                     Pizza prosto z <span class="headerLastWord">Luthadel!</span>
@@ -49,7 +56,7 @@
                     z chrupiącym ciastem i wyrazistymi smakami przeniosą Cię w magiczny świat, gdzie
                     każdy kęs jest pełen mocy. Odkryj smak, który przetrwa wieki!
                 </p>
-                <button class="mainMenuButton">View Menu</button>
+                <button class="mainMenuButton" href="#menuSection">Menu</button>
             </div>
             <div class="mainImageSection">
                 <img src="img/pizzaSlice1.webp" alt="Slice of Pizza" class="mainImage" />;
@@ -101,7 +108,7 @@
 
         <section id="aboutUsSection" class="aboutUsSection">
             <div class="oNasFirstPart">
-                <div class="oNasImage" id="oNasImage">
+                <div class="oNasImage" id="oNasImage" alt="Grafika przedstawiająca kawałek pizzy">
                     <div class="firstPartTextContainer">
                         <h2 class="oNasTitle">O nas</h2>
                         <p class="oNasDesc">
@@ -174,7 +181,7 @@
                         rzeczywistość i dołącz do nas!
                     </p>
                 </div>
-                <div class="mainImageSection">
+                <div class="mainImageSection" id="contactSection">
                     <form class="contact-form" enctype="multipart/form-data">
                         <h2 class="formHeader">Formularz kontaktowy</h2>
                         <div class="formGroup">
@@ -216,7 +223,7 @@
             </div>
         </section>
 
-        <section class="orderSection">
+        <section class="orderSection" id="orderSection">
             <section class="completingOrderSection">
                 <div class="completingOrderSectionContainer">
                     <div class="leftSideOfCompletingOrderContainer">
@@ -301,7 +308,7 @@
                 </div>
             </section>
 
-            <section class="pizzaOrderSection">
+            <section class="pizzaOrderSection" id="pizzaOrderSection">
                 <div class="leftSideOfOrderSectionContainer">
                     <div class="leftSideOfOrderSection">
                         <div class="leftContainer">
@@ -332,68 +339,81 @@
                         <div class="deliveryPaymentLabel">Dostawa i płatność</div>
                     </div>
                 </div>
+            </section>
+            <section class="paymentSection" id="paymentSection">
+                <div class="leftSideOfPaymentSectionContainer">
+                    <div class="paymentSectionLeftSideOfContainer">
+                        <div class="leftContainer">
+                            <div class="paymentHeaderContainer">
+                                <h4 class="leftSideOfpaymentSectionHeader">Zamówienie</h4>
+                                <div class="orderPaymentContainer">
+                                    <div class="paymentTypesContainer">
+                                        <button class="orderingPlaceButtons onSiteButton">Na miejscu</button>
+                                        <button class="orderingPlaceButtons deliveryButton">Z dowozem</button>
+                                    </div>
+                                    <div class="paymentFormContainer">
+                                        <legend>Dane kontaktowe</legend>
+                                        <label for="name">Imię i nazwisko:</label>
+                                        <input
+                                            type="text"
+                                            id="name"
+                                            name="name"
+                                            placeholder="Jan Kowalski"
+                                            required
+                                        />
 
-                <!--  <div class="orderHeader">
-                <h2 class="orderTitle">Zamów pizzę!</h2>
-                <p class="orderDescription">Czy chciałbyś zamówić pyszną pizzę z naszej oferty? Wybierz jedną z poniższych opcji:</p>
-            </div>
-            <div class="formGroup">
-                <input type="text" id="nameOfDish" name="nameOfDish" placeholder="Wpisz nazwę szukanego dania:">
-            </div>
-            <div class="filterIconsContainer">
-                <ul class="listOfIconsContainer">
-                    <li class="listOfIconsElement listOfIconsElementFilter" id="pizzaButton">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="#ffffff" d="M151.6 42.4C145.5 35.8 137 32 128 32s-17.5 3.8-23.6 10.4l-88 96c-11.9 13-11.1 33.3 2 45.2s33.3 11.1 45.2-2L96 146.3 96 448c0 17.7 14.3 32 32 32s32-14.3 32-32l0-301.7 32.4 35.4c11.9 13 32.2 13.9 45.2 2s13.9-32.2 2-45.2l-88-96zM320 480l32 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-32 0c-17.7 0-32 14.3-32 32s14.3 32 32 32zm0-128l96 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-96 0c-17.7 0-32 14.3-32 32s14.3 32 32 32zm0-128l160 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-160 0c-17.7 0-32 14.3-32 32s14.3 32 32 32zm0-128l224 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L320 32c-17.7 0-32 14.3-32 32s14.3 32 32 32z"/></svg>
-                    </li>
-                    <li class="listOfIconsElement listOfIconsElementFilter" id="drinkButton">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="#ffffff" d="M151.6 469.6C145.5 476.2 137 480 128 480s-17.5-3.8-23.6-10.4l-88-96c-11.9-13-11.1-33.3 2-45.2s33.3-11.1 45.2 2L96 365.7 96 64c0-17.7 14.3-32 32-32s32 14.3 32 32l0 301.7 32.4-35.4c11.9-13 32.2-13.9 45.2-2s13.9 32.2 2 45.2l-88 96zM320 480c-17.7 0-32-14.3-32-32s14.3-32 32-32l32 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-32 0zm0-128c-17.7 0-32-14.3-32-32s14.3-32 32-32l96 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-96 0zm0-128c-17.7 0-32-14.3-32-32s14.3-32 32-32l160 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-160 0zm0-128c-17.7 0-32-14.3-32-32s14.3-32 32-32l224 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L320 96z"/></svg>
-                    </li>
-                </ul>
-            </div>
-            <button class="navigationOrderButton" onclick="orderPizza()">Anuluj</button>
-            <button class="navigationOrderButton" onclick="orderPizza()">Dalej</button> -->
+                                        <label for="phone">Telefon:</label>
+                                        <input
+                                            type="tel"
+                                            id="phone"
+                                            name="phone"
+                                            placeholder="123-456-789"
+                                            required
+                                        />
+                                    </div>
+                                    <div class="elivery-address paymentFormContainer">
+                                        <legend>Adres</legend>
+                                        <label for="street">Ulica:</label>
+                                        <input
+                                            type="text"
+                                            id="street"
+                                            name="street"
+                                            placeholder="Kwiatowa 12"
+                                        />
 
-                <!-- <div class="leftSideOfOrderSection">
-                <h2 class="orderTitle">Zamów pizzę!</h2>
-                <h5 class="orderDescription">Czy chciałbyś zamówić pyszną pizzę z naszej oferty? Wybierz jedną z opcji obok:</h4>
-                <div class="cartSection">
-                    <h2 class="cartTitle">Twój koszyk <span id="totalPrice">0.00</span></h2>
-                    <div class="shopListContainer">
-                        <div class="shopListElement">
-                            <div class=" productImage2 productImageZMglyZrodzony">
+                                        <label for="city">Miasto:</label>
+                                        <input
+                                            type="text"
+                                            id="city"
+                                            name="city"
+                                            placeholder="Warszawa"
+                                        />
 
+                                        <label for="zip">Kod pocztowy:</label>
+                                        <input
+                                            type="text"
+                                            id="zip"
+                                            name="zip"
+                                            placeholder="00-000"
+                                        />
+                                    </div>
+                                    <button type="submit" class="submit-button submitPayment">
+                                        Zamów
+                                    </button>
+                                </div>
                             </div>
-                            <h3 class="productName">Product name</h3>
-                            <h3 class="productPrice">3.99</h3>
                         </div>
-
-                        <div class="shopListElement">
-                            <div class=" productImage2 productImageZMglyZrodzony">
-
-                            </div>
-                            <h3 class="productName">Product name</h3>
-                            <h3 class="productPrice">3.99</h3>
-                        </div>
-                        <div class="shopListElement">
-                            <div class=" productImage2 productImageZMglyZrodzony">
-
-                            </div>
-                            <h3 class="productName">Product name</h3>
-                            <h3 class="productPrice">3.99</h3>
-                        </div>
-                        <div class="shopListElement">
-                            <div class=" productImage2 productImageZMglyZrodzony">
-
-                            </div>
-                            <h3 class="productName">Product name</h3>
-                            <h3 class="productPrice">3.99</h3>
-                        </div>
-                        
-                       
                     </div>
                 </div>
-       
-        </div> -->
+            </section>
+            <section class="popups">
+                <div class="popup-container" id="popup">
+                    <div class="popup">
+                        <h2>Dziękujemy za zamówienie!</h2>
+                        <p>Twoje zamówienie zostało przyjęte i wkrótce się z Tobą skontaktujemy.</p>
+                        <button class="popup-close-button" id="closePopup">Zamknij</button>
+                    </div>
+                </div>
             </section>
         </section>
     </body>
