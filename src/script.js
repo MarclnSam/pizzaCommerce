@@ -36,5 +36,7 @@ clearCartButton.addEventListener('click', clearCart);
 //popup
 popupFunctions();
 
-
+document.querySelector('.hamburger_menu_button').addEventListener('click', ()=>{
+    alert('Funkcja na razie nie dostępna w trakcie dystrybucji');
+})
 localStorage.setItem('cart', JSON.stringify([])); // Utworzenie pustego koszyka

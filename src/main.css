@@ -5,9 +5,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 body {
     background: #36393d;
+    scrollbar-width: none;
+}
+::-webkit-scrollbar {
+    display: none;
 }
 img {
     cursor: default;
@@ -96,7 +101,6 @@ img {
 .mainTextHeader {
     text-align: center;
     font-size: 4.5rem;
-    text-wrap: nowrap;
 }
 .headerLastWord {
     color: #a31e22;
@@ -565,7 +569,6 @@ hr {
 }
 .leftSideOfOrderSectionContainer,
 .leftSideOfPaymentSectionContainer {
- 
     color: #36393d;
     display: flex;
     flex-direction: column;
@@ -627,9 +630,8 @@ hr {
     gap: 200px;
     margin: 4rem;
     letter-spacing: 0.04rem;
-    
 }
-.paymentHeaderContainer{
+.paymentHeaderContainer {
     min-width: 400px;
 }
 .leftSideOfOrderSectionHeader,
@@ -779,12 +781,10 @@ hr {
     }
 }
 
-
 .paymentTypesContainer {
     display: flex;
     justify-content: space-around;
     width: 100%;
-    
 }
 .orderingPlaceButtons {
     cursor: default;
@@ -805,94 +805,92 @@ hr {
 }
 /*jak sie aktywuje przycisk daj tą klase */
 .orderingPlaceButtons:hover,
-.orderingPlaceButtons:active, .orderingPlaceButtonsActivated {
+.orderingPlaceButtons:active,
+.orderingPlaceButtonsActivated {
     color: #c7c6bd;
     background-color: #36393d;
     border: none;
 }
-.leftSideOfpaymentSectionHeader{
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 1rem;
- 
+.leftSideOfpaymentSectionHeader {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
 }
-.orderPaymentContainer{
+.orderPaymentContainer {
     border: solid 1px #36393d;
     margin: none;
 }
 
-  legend {
+legend {
     color: #671316;
     font-size: 1.2rem;
     margin-bottom: 10px;
-  }
-  
-  label {
+}
+
+label {
     display: flex;
     margin-bottom: 10px;
-    color: #36393d; 
-  }
-  .paymentFormContainer{
+    color: #36393d;
+}
+.paymentFormContainer {
     padding: 20px;
-  }
-  
-  
-  input[type="text"],
-  input[type="tel"] {
+}
+
+input[type='text'],
+input[type='tel'] {
     width: calc(100% - 20px);
     padding: 8px;
     margin-bottom: 10px;
     border: 1px solid #671316;
     border-radius: 5px;
     background-color: #fff;
-  }
-  
-  
-  input[type="radio"] {
+}
+
+input[type='radio'] {
     margin-right: 5px;
-  }
- 
-  .submit-button {
+}
+
+.submit-button {
     display: flex;
     justify-content: center;
     width: 100%;
     padding: 10px;
-    background-color: #671316; 
-    color: #c7c6bd; 
+    background-color: #671316;
+    color: #c7c6bd;
     border: none;
     font-size: 1.2rem;
-    
+
     cursor: pointer;
     transition: background-color 0.3s;
-  }
-  
-  .submit-button:hover {
-    background-color: #b22222;  
-  }
+}
 
-  .popup-container {
+.submit-button:hover {
+    background-color: #b22222;
+}
+
+.popup-container {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); 
+    background-color: rgba(0, 0, 0, 0.6);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    visibility: hidden; 
+    visibility: hidden;
     opacity: 0;
     transition: visibility 0.3s, opacity 0.3s;
-  }
-  
-  .popup-container.show {
+}
+
+.popup-container.show {
     visibility: visible;
     opacity: 1;
-  }
-  
-  .popup {
-    background-color: #c7c6bd; 
+}
+
+.popup {
+    background-color: #c7c6bd;
     border: 2px solid #671316;
     border-radius: 10px;
     padding: 20px 30px;
@@ -900,9 +898,9 @@ hr {
     width: 90%;
     max-width: 400px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  }
-  
-  .popup-close-button {
+}
+
+.popup-close-button {
     background-color: #8b0000;
     color: #fff;
     border: none;
@@ -912,8 +910,332 @@ hr {
     cursor: pointer;
     transition: background-color 0.3s;
     margin: 1rem;
-  }
-  
-  .popup-close-button:hover {
+}
+
+.popup-close-button:hover {
     background-color: #b22222;
-  }
+}
+.naviagtionHamburger {
+    display: none;
+}
+@media (max-width: 1200px) {
+    .mainTextSection,
+    .mainImageSection {
+        margin: 2rem;
+    }
+    .mainTextHeader {
+        font-size: 4rem;
+    }
+    .productElement {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-height: none;
+    }
+    .productImage {
+        min-width: 400px;
+        min-height: 300px;
+    }
+    .productDescription {
+        margin: 4rem 2rem;
+        width: 100%;
+        max-height: 40%;
+    }
+    .productTitleandPrize {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+/* Dla ekranów o szerokości do 992px */
+@media (max-width: 992px) {
+    .navigationList {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .navigationListElement {
+        margin: 1rem;
+    }
+    .mainSectionContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+    .mainTextSection,
+    .mainImageSection {
+        width: 90%;
+        margin: 2rem 0;
+    }
+    .productsContainer {
+        margin: 2rem;
+        width: 100%;
+    }
+    .productElement {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+    .productImage {
+        width: 80%;
+        margin: 0;
+        margin-bottom: 1rem;
+    }
+    .productDescription {
+        width: 90%;
+        text-align: center;
+    }
+    .completingOrderSectionContainer{
+        flex-direction: column;
+    }
+    .leftSideOfCompletingOrderContainer{
+        width: auto;
+        margin-left:  0.5rem;
+        margin-right:  0.5rem;
+        overflow: visible;
+    }
+    .proceedToCartButton{
+        width: 100%;
+        margin: 0;
+    }
+}
+
+/* Dla ekranów o szerokości do 768px */
+@media (max-width: 768px) {
+    .navigationListElement {
+        margin: 0.5rem;
+        display: none;
+    }
+    .navigationLogo {
+        display: flex;
+    }
+    .naviagtionHamburger {
+        display: flex;
+    }
+    .mainTextSection {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .mainImageSection {
+        display: none;
+    }
+    .mainTextHeader {
+        font-size: 3rem;
+    }
+    .mainTextParagraph {
+        font-size: 1rem;
+    }
+    .navigationItem {
+        font-size: 1.5rem;
+    }
+    .mainMenuButton {
+        width: 50%;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+    }
+    .productImage {
+        width: 60%;
+        height: 60%;
+    }
+    .productElement {
+        flex-direction: column;
+        align-items: center;
+    }
+    .productDescription {
+        width: 60%;
+        overflow: visible;
+    }
+    .contact-form {
+        width: 90%;
+    }
+    .oNasImageFiller {
+        display: none;
+    }
+    .leftSideOfOrderSectionContainer {
+        flex-wrap: wrap;
+        max-width: 50%;
+    }
+    .leftSideOfOrderSection {
+        max-width: 100%;
+    }
+    .leftContainer {
+        gap: 0;
+    }
+    .cartItemContainer {
+        margin: 0rem;
+    }
+    .cartItem {
+        margin: 1rem 0rem;
+        max-height: none;
+    }
+    .cartItemPrice{
+        margin-right: 1rem;
+        overflow: visible;
+    }
+    .productSumAmount{
+        margin-right: 1rem;
+        overflow: visible;
+    }
+}
+
+/* Dla ekranów o szerokości do 576px */
+@media (max-width: 576px) {
+    .navigationListElement {
+        margin: 0.5rem;
+        display: none;
+    }
+    .navigationLogo {
+        display: flex;
+    }
+    .naviagtionHamburger {
+        display: flex;
+    }
+    .navigationList {
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .mainTextSection,
+    .mainImageSection {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin: 1rem auto;
+    }
+
+    .mainImage {
+        height: auto;
+    }
+    .mainTextHeader {
+        font-size: 2.5rem;
+    }
+    .mainTextParagraph {
+        font-size: 0.9rem;
+    }
+    .mainSectionContainer {
+        display: flex;
+        flex-direction: column;
+    }
+    .productElement {
+        width: 100%;
+        flex-direction: column;
+        margin-bottom: 2rem;
+    }
+    .productImage {
+        width: 100%;
+        height: 200px;
+        height: auto;
+        margin-bottom: 1rem;
+    }
+    .productDescription {
+        width: 90%;
+    }
+    .mainMenuButton {
+        width: 50%;
+        margin: auto;
+        font-size: 0.9rem;
+    }
+    .cartItemProductName{
+        display: none;
+    }
+    .cartItemRemove{display: none;}
+    .cartItemDetails{
+        align-content: center;
+    }
+    .cartItemPrice{
+        
+        align-content: center;
+    }
+    .leftContainer{
+        margin: 0.4rem 0.4rem;
+        flex-direction: column;
+        width: 50%;
+    }
+   .leftSideOfOrderSection{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+   }
+   .cartItemContainer{
+    width: 100%;
+   }
+   .productSumLabel{
+    overflow: visible;
+   }
+   .orderSummaryContainer{
+    gap: 0;
+   }
+   .leftContainer{
+    width: 100%;
+   }
+   .mainImage{
+    display: none;
+   }
+   .naszaMisjaContainer{
+    display: flex;
+    flex-direction: column;
+   }
+   .naszaMisjaFirstPart{
+    width: 100%;
+   }
+   .naszaMisjaSecondPart{
+    width: 100%;
+   }
+   .naszaMisjaFirstPartHeader1{
+    text-align: center;
+   }
+   .naszaMisjaFirstPartHeader2{
+    text-align: center;
+   }
+   .naszaMisjaFirstPartParagraph{
+    margin: 0.2rem;
+    width: 90%;
+   }
+   
+   .naszeJedzenieContainer{
+    display: flex;
+    flex-direction: column;
+   }
+   .naszeJedzenieSecondPart{
+    width: 100%;
+   }
+   .naszeJedzenieFirstPart{
+    width: 100%;
+   }
+   .naszeJedzenieFirstPartHeader1{
+    text-align: center;
+   }
+   .naszeJedzenieFirstPartParagraph{
+    width: 90%;
+   }
+   .naszPoczatkiContainer{
+    display: flex;
+    flex-direction: column;
+   }
+   .naszPoczatkiFirstPart{
+    width: 100%;
+   }
+   .naszPoczatkiFirstPartHeader1{
+    text-align: center;
+   }
+   .naszPoczatkiFirstPartParagraph{
+    width: 90%;
+   }
+   .naszPoczatkiSecondPart{
+    width: 100%;
+   }
+   .formHeader{
+    text-align: center;
+   }
+   .oNasTitle{
+    text-align: center;
+    position: static;
+   }
+   .mainSectionContainer{
+    
+    justify-content: space-around;
+    height: 100vh;
+   }
+}
