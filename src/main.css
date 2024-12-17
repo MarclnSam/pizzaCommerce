@@ -76,19 +76,22 @@ img {
 }
 .mainSectionContainer {
     display: flex;
+    justify-content: center;
     width: 100%;
 }
 .mainTextSection {
     width: 50%;
-    margin: 4rem;
+    margin: auto;
     font-family: 'Roboto', sans-serif;
     color: #fff;
     font-size: 2rem;
 }
-.mainImageSection {
-    width: 49%;
-    margin: 4rem;
+.mainMenuButtonContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
+
 .mainImage {
     width: 100%;
     height: 640px;
